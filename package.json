@@ -1,0 +1,31 @@
+{
+  "name": "hotelbuddyserver",
+  "version": "1.0.0",
+  "description": "A server for the chatbot Hotel Buddy",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MrPhenomenal3110/hotelBuddy.git"
+  },
+  "author": "Prem Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrPhenomenal3110/hotelBuddy/issues"
+  },
+  "homepage": "https://github.com/MrPhenomenal3110/hotelBuddy#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4",
+    "openai": "^4.52.3",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7",
+    "uuid": "^10.0.0"
+  }
+}
