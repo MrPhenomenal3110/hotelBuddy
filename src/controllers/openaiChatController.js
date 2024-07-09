@@ -1,8 +1,7 @@
-import { openai } from '../openai/config/api-config.js';
+import { openai } from '../openai/config/apiConfig.js';
 import {getRoomDetails, bookRoom, getBookingDetails, createBooking, cancelBooking} from '../openai/helperFunctions/functions.js';
 import { createAssistant, createRunObject, handleCreateMessage, handleCreateThread, handleRun } from '../openai/utils/utilFunctions.js';
 import express from 'express';
-
 
 const app = express();
 
