@@ -1,0 +1,3 @@
+[submodule "hotelBuddyClient"]
+	path = hotelBuddyClient
+	url = git@github.com:MrPhenomenal3110/hotelBuddyClient.git
