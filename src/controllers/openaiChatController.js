@@ -14,6 +14,7 @@ const thread = await handleCreateThread(openai);
 const chatController = async (req, res) => {
 
   const message = req.body.message;
+  const thread = req.body.threadId;
   
   const functions = {
     getRoomDetails : async () => {

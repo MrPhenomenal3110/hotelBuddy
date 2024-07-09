@@ -38,7 +38,7 @@ export const createAssistant = async (openai) => {
 
 export const createRunObject = async (openai, thread, assistant) => {
     const runObject = await openai.beta.threads.runs.createAndPoll(
-        thread.id,
+        thread,
         {
             assistant_id: assistant.id,
         },
@@ -48,7 +48,7 @@ export const createRunObject = async (openai, thread, assistant) => {
 
 export const handleCreateMessage = async (openai, thread, content) => {
     await openai.beta.threads.messages.create(
-        thread.id,
+        thread,
         {
             role: "user",
             content: content,
@@ -66,7 +66,7 @@ export const handleRun = async (res, openai, run, thread, functions) => {
     console.log(run.status);
 
     if (run.status === "completed") {
-        let messages = await openai.beta.threads.messages.list(thread.id);
+        let messages = await openai.beta.threads.messages.list(thread);
         console.log(messages.data[0].content);
         return res.send(messages.data);
       } else if (run.status === "requires_action") {
@@ -114,7 +114,7 @@ const handleRequiresAction = async (res, openai, run, thread, functions) => {
         }
         if (toolOutputs.length > 0) {
             run = await openai.beta.threads.runs.submitToolOutputsAndPoll(
-                thread.id,
+                thread,
                 run.id,
                 {
                     tool_outputs: toolOutputs
