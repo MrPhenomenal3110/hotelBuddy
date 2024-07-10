@@ -18,11 +18,15 @@ HotelBuddy is a chatbot designed to assist users with room booking. It provides 
 - [﻿Contact](https://github.com/MrPhenomenal3110/hotelBuddy/blob/main/README.md#contact) 
 ---
 
+<a id='features'></a>
+
 ## Features
 - Look up available rooms
 - Book a room
 - Fetch booking details via booking ID
 - Cancel a booking via booking ID
+
+<a id='technologiesUsed'></a>
 
 ## Technologies Used
 - Node.js
@@ -30,6 +34,8 @@ HotelBuddy is a chatbot designed to assist users with room booking. It provides 
 - SQLite
 - Sequelize
 - OpenAI API
+
+<a id='installation'></a>
 
 ## Installation
 - Clone the repository.
@@ -43,6 +49,8 @@ npm install
 ```
 - Setting up the database: There is no need to set up the database as such, because it uses an in-memory database.
 
+<a id='usage'></a>
+
 ## Usage
 ### Starting the Server
 To start the server, run:
@@ -52,7 +60,12 @@ npm run test
 ```
 >  **NOTE** : There is a folder named openai and a folder named gemini. Currently only openai is functional and gemini has not yet been implemented. 
 
+<a id='apiEndpoints'></a>
+
 ### API Endpoints
+
+<a id='get'></a>
+
 #### GET `/thread` 
 Provides the thread ID which is used to identify a unique conversation. For every session, the client will first have to make a GET request to the server once at the very beginning to get the thread ID. The client can then use this thread ID throughout the session to uniquely identify the conversation.
 
@@ -63,6 +76,9 @@ Provides the thread ID which is used to identify a unique conversation. For ever
   "threadId": "unique-thread-id"
 }
 ```
+
+<a id='post'></a>
+
 #### POST `/chat` 
 Takes in the user message and thread ID as request body and returns the chatbot's response.
 
@@ -81,6 +97,9 @@ Takes in the user message and thread ID as request body and returns the chatbot'
   "response": "chatbot response"
 }
 ```
+
+<a id='architecture'></a>
+
 ## Architecture
 HotelBuddy uses the repository pattern for database interactions and the controller-service pattern to organize the codebase.
 
@@ -89,6 +108,8 @@ HotelBuddy uses a repository layer for database operations and all the functions
 
 ### Controller Service Pattern
 HotelBuddy uses the Controller-Service pattern to organize the codebase, such that all the services include files that are functions required for services like for example BookingServices handles the booking of rooms by doing the necessary database operations and carrying out other necessary operations maybe like calling another service, etc.
+
+<a id='db'></a>
 
 ## Database
 HotelBuddy uses SQLite as the database and Sequelize as the ORM.
@@ -102,6 +123,8 @@ The database is used for storing the booking details.
 
 Here is the database schema link: [﻿drawsql.app/teams/backendprojectsst/diagrams/hotelbuddy](https://drawsql.app/teams/backendprojectsst/diagrams/hotelbuddy) 
 
+<a id='openaiapis'></a>
+
 ## OpenAI API
 HotelBuddy uses the OpenAI API for chatbot functionality, leveraging the function calling feature and assistants.
 
@@ -109,15 +132,24 @@ You can learn more and understand how assistants work and how function calling w
 
 - All the functions used for function calling are present in the file : `src/openai/helperFunctions/functions.js`  
 - All the functions declarations are present in the file : `src/openai/utils/functionDeclarations.js`  
-- The utility functions for creating assistants, run object, threads, etc. are present in the file : `src/openai/utils/utilFunctions.js` 
+- The utility functions for creating assistants, run object, threads, etc. are present in the file : `src/openai/utils/utilFunctions.js`
+
+<a id='contribution'></a>
+
 ## Contributing
  [﻿github.com/MrPhenomenal3110/hotelBuddy/blob/main/CONTRIBUTING.md](https://github.com/MrPhenomenal3110/hotelBuddy/blob/main/CONTRIBUTING.md) 
+
+<a id='license'></a>
 
 ## License
 [﻿github.com/MrPhenomenal3110/hotelBuddy/blob/main/LICENSE](https://github.com/MrPhenomenal3110/hotelBuddy/blob/main/LICENSE) 
 
+<a id='clientRepo'></a>
+
 ## Client Repository
 [﻿HotelBuddy Client GitHub Repository](https://github.com/MrPhenomenal3110/hotelBuddyClient) 
+
+<a id='contact'></a>
 
 ## Contact
 For any questions or inquiries, please contact **Prem Shah** at [﻿prem.nbshah@gmail.com](mailto:prem.nbshah@gmail.com).
